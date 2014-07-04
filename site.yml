@@ -1,0 +1,8 @@
+#master playbook
+---
+# file: site.yml
+- include: webservers.yml
+- include: dbservers.yml
+
+# This should be further broken down into specific microservices
+- include: appservers.yml

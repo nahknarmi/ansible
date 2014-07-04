@@ -1,0 +1,4 @@
+# here we assign variables to particular groups
+---
+ntp: ntp-atlanta.example.com
+backup: backup-atlanta.example.com

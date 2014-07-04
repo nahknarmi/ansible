@@ -1,0 +1,37 @@
+README
+
+webservers: Nginx app hosting the angular applications
+
+appservers: Golang app hosting the services consumed by the angular application
+
+dbservers: Mongodb
+
+
+Examples:
+
+Deploy whole infrastructure (stage, production)
+ansible-playbook -i production site.yml
+
+Reconfigure NTP server only
+ansible-playbook -i production site.yml --tags ntp
+
+Reconfigure my production webservers
+ansible-playbook -i production webservers.yml
+
+
+Adhoc tasks
+
+Ping production servers
+ansible webservers -i production -m ping
+
+Reboot webservers
+ansible webservers -i production -m command -a '/sbin/reboot'
+
+Testing
+
+Testing tasks affected before running playbook
+ansible-playbook -i production webservers.yml --tags ntp --list-tasks
+
+Testing hosts affected before running playbook
+ansible-playbook -i production webservers.yml --limit boston --list-hosts
+

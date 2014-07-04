@@ -1,0 +1,4 @@
+---
+#webserver specific variables
+apacheMaxRequestsPerChild: 3000
+apacheMaxClients: 900
