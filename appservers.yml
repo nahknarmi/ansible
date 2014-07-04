@@ -1,4 +1,4 @@
-# playbook for webserver tier
+# playbook for appservers tier
 ---
 - hosts: appservers
   roles:

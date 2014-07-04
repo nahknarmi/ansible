@@ -16,3 +16,8 @@
   service: name=nginx state=running enabled=yes
   sudo: yes
   tags: nginx
+
+- name: be sure artifact extracted to correct path
+  unarchive: src=../../../web.zip dest=/usr/share/nginx/html/
+  sudo: yes
+  tags: web-artifact

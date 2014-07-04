@@ -1,1 +1,5 @@
 # playbook for dbserver tier
+---
+- hosts: dbservers
+  roles:
+    - common
