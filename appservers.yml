@@ -1,0 +1,6 @@
+# playbook for webserver tier
+---
+- hosts: appservers
+  roles:
+    - common
+    - microservices

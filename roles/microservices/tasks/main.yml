@@ -1,0 +1,6 @@
+ #  <-- tasks file can include smaller files if warranted
+---
+- name: be sure golang is installed
+  apt: pkg=golang state=present update_cache=yes
+  sudo: yes
+  tags: golang
