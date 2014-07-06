@@ -1,1 +1,4 @@
 #  <-- variables associated with this role
+---
+web_tier_location: "/usr/share/nginx/html/"
+ansible_ssh_user: ubuntu

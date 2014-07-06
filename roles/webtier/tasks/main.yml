@@ -5,19 +5,22 @@
   sudo: yes
   tags: nginx
 
-#- name: be sure ntp is configured
-#  template: src=ntp.conf.j2 dest=/etc/ntp.conf
-#  notify:
-#    - restart ntp
-#  sudo: yes
-#  tags: ntp
-
 - name: be sure nginx is running and enabled
   service: name=nginx state=running enabled=yes
   sudo: yes
   tags: nginx
 
 - name: be sure artifact extracted to correct path
-  unarchive: src=../../../web.zip dest=/usr/share/nginx/html/
+  unarchive: src=web.zip dest={{ web_tier_location }}
   sudo: yes
-  tags: web-artifact
+  tags: deploy
+
+# - name: Check out the latest revision of the codebase and notify the proper handlers if there have been updates
+#   git: repo=https://github.com/nahknarmi/wli-webtier accept_hostkey=yes
+#        dest={{ web_tier_location }}/current
+#   sudo: yes
+#   notify:
+#     # - Symlink the log directory to the shared location
+#     # - Install the bundle
+#     - Restart nginx
+#   tags: deploy  

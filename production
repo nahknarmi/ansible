@@ -3,7 +3,9 @@
 # file: production
 
 [webservers]
-web1 ansible_ssh_host=54.79.70.4 ansible_ssh_user=ubuntu
+web1 ansible_ssh_host=54.79.114.19 ansible_ssh_user=ubuntu
+web2 ansible_ssh_host=54.79.22.140 ansible_ssh_user=ubuntu
+
 
 [appservers]
 app1 ansible_ssh_host=54.79.20.9 ansible_ssh_user=ubuntu

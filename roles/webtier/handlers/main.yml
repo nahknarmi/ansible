@@ -1,4 +1,4 @@
 #  <-- handlers file
 ---
-- name: restart ntpd
-  service: name=ntpd state=restarted
+- name: Restart nginx
+  action: service name=nginx state=restarted

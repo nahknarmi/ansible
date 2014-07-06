@@ -5,9 +5,4 @@
   sudo: yes
   tags: golang
 
-- name: be sure artifact extracted to correct path
-  unarchive: src=../../../app.zip dest=/home/ubuntu/
-  sudo: yes
-  tags: app-artifact
-
 
