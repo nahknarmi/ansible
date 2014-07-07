@@ -5,6 +5,12 @@
   sudo: yes
   tags: nginx
 
+- name: be sure nginx is configured
+  copy: src=default dest=/etc/nginx/sites-enabled/default owner=root group=root mode=644 backup=yes
+  sudo: yes
+  tags: nginx
+
+
 - name: be sure nginx is running and enabled
   service: name=nginx state=running enabled=yes
   sudo: yes
